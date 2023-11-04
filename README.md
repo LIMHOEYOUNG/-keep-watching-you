@@ -5,3 +5,27 @@
 ### Detection and warning system to prevent drowsy driving
 
 한국공학대학교 졸업작품 팀 레포지토리 Tech University of Korea
+
+
+
+* #### 👨‍👨‍👦‍👦: 팀원
+  * 임회영, 윤찬열, 이동혁, 최형진
+ 
+* #### 🧰: 협업도구
+  * #### Git
+ 
+* #### 📱: front
+  * Language & Enviroment:
+  * FrameWork:
+  * Developers:
+ 
+* #### 🖥️: backend
+  * Language & Enviroment:
+  * Developers:
+ 
+* #### ☁️: server
+
+
+
+<hr/>
+</br>
