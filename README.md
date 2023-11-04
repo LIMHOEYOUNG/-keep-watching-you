@@ -13,6 +13,7 @@
  
 * #### 🧰: collaboration tool
   * #### Git
+  * #### Agile
  
 * #### 📱: front-end
   * Language & Enviroment:
