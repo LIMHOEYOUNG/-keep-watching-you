@@ -14,12 +14,12 @@
 * #### 🧰: 협업도구
   * #### Git
  
-* #### 📱: front
+* #### 📱: front-end
   * Language & Enviroment:
   * FrameWork:
   * Developers:
  
-* #### 🖥️: backend
+* #### 🖥️: back-end
   * Language & Enviroment:
   * Developers:
  
