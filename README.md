@@ -12,8 +12,8 @@
   * 임회영, 윤찬열, 이동혁, 최형진
  
 * #### 🧰: collaboration tool
-  * #### Git
-  * #### Agile
+  * Git
+  * Agile
  
 * #### 📱: front-end
   * Language & Enviroment:
