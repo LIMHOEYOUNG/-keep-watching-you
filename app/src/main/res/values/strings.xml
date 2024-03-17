@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string-array name="accident_menu">
+        <item>부상자 수</item>
+        <item>사고건 수</item>
+        <item>사망자 수</item>
+    </string-array>
+</resources>
