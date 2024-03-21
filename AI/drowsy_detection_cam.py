@@ -31,7 +31,7 @@ while cap.isOpened():
                 print("mouthcount2:", mouthcount)
             elif check == 1:
                 if(eyecount > 0):
-                    eyecount = eyecount - 2
+                    eyecount = eyecount - 1
                 print("eyecount3:" , eyecount)
             elif check == 2:
                 if(mouthcount > 0):
