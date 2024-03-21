@@ -167,6 +167,34 @@ void reset_data(char *data){
 	memset(data,0,strlen(data));
 }
 
+void reset_struct(){
+  /*
+    char gpsData[80];
+  char data_flag;       // 데이터 수신 확인 flag
+  char parseData_flag;  // 파싱 완료 flag
+  char utc_time[12];    // UTC 시간
+  char slatitude[15];   // 위도
+  char ns[2];           // 북/남
+  char slongitude[15];  // 경도
+  char ew[2];           // 동/서
+  char use_Flag;        // 사용가능 여부 flag
+  char latitude[12];
+  char longitude[12];
+  char ddd_latitude[3];
+  char ddd_longitude[3];
+  */
+  reset_data(data_Struct.gpsData);
+  reset_data(data_Struct.utc_time);
+  reset_data(data_Struct.slatitude);
+  reset_data(data_Struct.slongitude);
+  reset_data(data_Struct.ns);
+  reset_data(data_Struct.ew);
+  reset_data(data_Struct.latitude);
+  reset_data(data_Struct.longitude);
+  reset_data(data_Struct.ddd_latitude);
+  reset_data(data_Struct.ddd_longitude);
+}
+
 void show_data(){
 	
 	printf("UTC : %s\n",data_Struct.utc_time);
@@ -222,8 +250,13 @@ void convertArray(char *buf, char *ddd_result, char *result){
 
 char* gpsDataToJSON(char *gpsTime) {
     char* json = (char*)malloc(200 * sizeof(char)); // 충분한 공간 할당
-    printf("slatitude = %s, strlen = %ld, type = \n",data_Struct.slatitude,strlen(data_Struct.slatitude));
-    printf("slongitude = %s, strlen = %ld\n",data_Struct.slongitude,strlen(data_Struct.slongitude));
+    //printf("slatitude = %s, strlen = %ld, type = \n",data_Struct.slatitude,strlen(data_Struct.slatitude));
+    //printf("slongitude = %s, strlen = %ld\n",data_Struct.slongitude,strlen(data_Struct.slongitude));
+    
+    printf("=================\n");
+    show_data();
+    printf("=================\n");
+    
     /*
     if((strlen(data_Struct.slatitude)!=0) && (strlen(data_Struct.slongitude)!=0)) {
       
@@ -354,6 +387,7 @@ int main() {
 
 
 	while (1/*fgets(str,MAX_LEN,fr) != NULL*/) {
+	  fd = open_port("/dev/ttyACM0");
 
 		memset(read_buf, 0, BUFFER_SIZE);
 		read_buffer_size = read_Buffer(fd, read_buf);
@@ -367,9 +401,10 @@ int main() {
               data_Struct.use_Flag=0;
             }
             else{
-              printf("data_Struct.parseData_flag = %d\n",data_Struct.parseData_flag);
-              printf("data_Struct.use_Flag = %d\n",data_Struct.use_Flag);
+              //printf("data_Struct.parseData_flag = %d\n",data_Struct.parseData_flag);
+              //printf("data_Struct.use_Flag = %d\n",data_Struct.use_Flag);
               printf("수신 실패\n");
+              //reset_data(dataInfo);
             }
 
             //show_data();
@@ -410,8 +445,14 @@ int main() {
             printf("===========================\n");
             */
             if ((strlen(data_Struct.slatitude) != 0) && (strlen(data_Struct.slongitude) != 0)) {
+                now = time(&now);
+	              localtime_r(&now, &newtime);
+                memset(gpsTime,0,sizeof(gpsTime));
+              	sprintf(gpsTime, "%.4d-%.2d-%.2dT%.2d:%.2d:%.2d", newtime.tm_year + 1900, newtime.tm_mon + 1, newtime.tm_mday, newtime.tm_hour, newtime.tm_min, newtime.tm_sec);
                 writeLocationDataJSONToFile(fileName, gpsTime, fw, start_flag);
                 start_flag = 1;
+                sleep(10);
+                reset_struct();
             }
             /*
             if(fwrite(dataInfo,sizeof(char),strlen(dataInfo),fw)){
@@ -430,6 +471,11 @@ int main() {
                             }
             */
             //read_gps(str);
+            //close(fd);
+            
+            
+            //sleep(10);
+            
         }
 	}
   close(fd);

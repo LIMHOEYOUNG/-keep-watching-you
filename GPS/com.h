@@ -21,9 +21,18 @@ int read_Buffer(int Sfd, char *Sread_buffer);
 int open_port(char *dev) 
 {
   int fd;
+  fd = open(dev, O_RDWR|O_NOCTTY);
+  //printf("open dev [%s]\n",dev);
   
-  printf("open dev [%s]\n",dev);
-  fd = open(dev, O_RDWR|O_NOCTTY); 
+  /*
+  while(1){
+    fd = open(dev, O_RDWR|O_NOCTTY);
+    //printf("a\n");
+    if(fd !=0){ 
+      //printf("b\n");
+      break;}
+    } 
+  */
   if (fd < 0) { 
     perror("open serial port"); 
     return(-1); 
