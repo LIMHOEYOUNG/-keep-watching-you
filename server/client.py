@@ -6,7 +6,7 @@ url = "http://3.39.187.161:8000/login/"
 data = {
     'username': 'test',
     'password': 'passwd',
-    #'jwt': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExNDExOTEsImVtYWlsIjoidGVzdCJ9._uYZdTNvoXtVfBivE9wB3aMeoYS4BWp8wXWCxxmV09Y'
+    #'jwt': ''
 }
 json_data = json.dumps(data)
 #headers = {"Authorization": "token"}
