@@ -5,8 +5,8 @@ url = "http://3.39.187.161:8000/user_gps/gps_put"
 #url = "http://127.0.0.1:8000/user_gps/gps_put"
 data = {
     'jwt': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExNDExOTEsImVtYWlsIjoidGVzdCJ9._uYZdTNvoXtVfBivE9wB3aMeoYS4BWp8wXWCxxmV09Y',
-    'latitude': 'a',
-    'longitude':'sd'
+    'latitude': 13.1515,
+    'longitude': 1115.515
 }
 json_data = json.dumps(data)
 #headers = {"Authorization": "token"}
