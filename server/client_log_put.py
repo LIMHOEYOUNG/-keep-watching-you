@@ -5,12 +5,12 @@ url = "http://3.39.187.161:8000/user_log/log_put"
 #url = "http://127.0.0.1:8000/user_log/log_put"
 data = {
     'jwt': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExNDExOTEsImVtYWlsIjoidGVzdCJ9._uYZdTNvoXtVfBivE9wB3aMeoYS4BWp8wXWCxxmV09Y',
-    'start_time': '01031',
-    'start_location_lati':'848484fdgf8',
-    'start_location_longi':'sdfsadfdasf',
-    'end_time':'1300202',
-    'end_location_lati': 'sdfadfsdf',
-    'end_location_longi': 'sdfljsdjfdfklj'
+    'start_time': '2024-03-16T03:38:13.776Z',
+    'start_location_lati': 37.3393,
+    'start_location_longi': 126.7328,
+    'end_time':'2024-03-16T03:39:04.776Z',
+    'end_location_lati': 37.3502,
+    'end_location_longi': 126.7313
 }
 data = {'json_data': json.dumps(data)}
 #headers = {"Authorization": "token"}
