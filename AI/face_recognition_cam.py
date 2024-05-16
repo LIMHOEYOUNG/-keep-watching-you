@@ -40,12 +40,9 @@ while True:
                     break
                 else:
                     time.sleep(0.1)
-            cv2.putText(frame, "failed", (50,50), font, 1.0, (255, 255, 255), 1)
-        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-
-        cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
-        font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+            cv2.imwrite('image.jpg', frame)
+            Xallowed = cv2.imread('image.jpg',cv2.IMREAD_COLOR)
+            cv2.imshow('not allowed',Xallowed)
 
     cv2.imshow('Video', frame)
 
