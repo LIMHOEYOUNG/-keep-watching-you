@@ -13,8 +13,8 @@ model = YOLO('best.pt')
 cap = cv2.VideoCapture(0)
 eyecount = 0
 mouthcount = 0
-beepcount = 0
-beepcount1 = 0
+last_warned = time.time() 
+warning_active = False
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -43,18 +43,20 @@ while cap.isOpened():
                 #print("mouthcount4:", mouthcount)
         
         if 40 > eyecount >= 20:
-            beepcount = 0
-            beepcount += 1
-            cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
-            if(beepcount == 1):
+            if not warning_active and current_time - last_warned > 5:  # 5초마다 경고
+                cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
                 playsound("beep-1.wav", block=False)
+                last_warned = current_time
+                warning_active = True 
+        else:
+            warning_active = False 
         if eyecount >= 40:
             cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
             playsound("drowsy.wav", block=False)
             eyecount = 0
         if mouthcount >= 25:
-            cv2.putText(frame, "drowsy dectection mouthcount: %d" %mouthcount, (50,50), font, 1.0, (0, 0, 0), 1)
-            playsound("beep-1.wav", block=False)
+            cv2.putText(frame, "drowsy dectection mouthcount", (50,50), font, 1.0, (0, 0, 0), 1)
+            playsound("drowsy.wav", block=False)
             mouthcount = 0
         #annotated_image = results.plot()
         #cv2.imshow('YOLO', annotated_image)
@@ -65,5 +67,4 @@ while cap.isOpened():
         
 cap.release()
 cv2.destroyAllWindows()
-
 
