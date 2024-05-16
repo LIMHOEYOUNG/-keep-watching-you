@@ -9,7 +9,7 @@ import ultralytics
 from ultralytics import YOLO
 from playsound import playsound
 
-model = YOLO('best.pt')
+model = YOLO('best11.pt')
 cap = cv2.VideoCapture(0)
 eyecount = 0
 mouthcount = 0
