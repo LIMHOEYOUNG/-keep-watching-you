@@ -10,7 +10,7 @@ from ultralytics import YOLO
 from playsound import playsound
 
 model = YOLO('best11.pt') #모델 선정
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(-1)
 eyecount = 0
 mouthcount = 0
 last_warned = time.time() 
