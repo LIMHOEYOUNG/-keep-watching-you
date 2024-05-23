@@ -12,7 +12,7 @@ import numpy as np
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 def capture_image_on_face_detection(output_path='check/image.jpg'):
-    video_capture = cv2.VideoCapture(0)
+    video_capture = cv2.VideoCapture(-1)
     face_detected = False
 
     while not face_detected:
