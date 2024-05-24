@@ -4,11 +4,10 @@ import json
 url = "http://3.39.187.161:8000/user_sleep/sleep_put"
 #url = "http://127.0.0.1:8000/user_sleep/sleep_put"
 data = {
-    'jwt': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExNDExOTEsImVtYWlsIjoidGVzdCJ9._uYZdTNvoXtVfBivE9wB3aMeoYS4BWp8wXWCxxmV09Y',
-    #'jwt':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjQzOTc1MTUsImVtYWlsIjoiYSJ9.kPuOs32gliJF15DXObBOIg6TsLVuQs7c6VeDZrxTOhM',
-    'sleep_time': '2024-03-26T08:40:38Z',
-    'sleep_latitude_lati': 37.413441,
-    'sleep_location_longi': 126.686394
+    'jwt': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExNDExOTEsImVtYWlsIjoidGVzdCJ9._uYZdTNvoXtVfBivE9wB3aMeoYS4BWp8wXWCxxmV09Y'
+    #'jwt':'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjQzOTc1MTUsImVtYWlsIjoiYSJ9.kPuOs32gliJF15DXObBOIg6TsLVuQs7c6VeDZrxTOhM'
+    # 이제 따로 시간 안 넣어도 서버 시간 기준으로 넣어짐
+    # 좌표도 포함
 }
 json_data = json.dumps(data)
 #headers = {"Authorization": "token"}
