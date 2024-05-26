@@ -72,7 +72,10 @@ if __name__ == "__main__":
         print(f"Looking for faces in {captured_image_path}")
         predictions = predict(captured_image_path, model_path="trained_knn_model.clf")
         for name, (top, right, bottom, left) in predictions:
-            print(f"- Found {name} at ({left}, {top})")
-            subprocess.run(['python', 'drowsy_detection_cam.py'])
+            if name == "Unknown":
+                print(f"- Found {name} at ({left}, {top})")
+                #서버에 사진과 비인가자 알림 전송
+            else:
+                subprocess.run(['python', 'drowsy_detection_cam.py'])
         show_prediction_labels_on_image(captured_image_path, predictions)
 
