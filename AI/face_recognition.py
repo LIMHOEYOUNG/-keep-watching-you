@@ -1,13 +1,10 @@
-import math
-from sklearn import neighbors
 import os
 import os.path
 from PIL import Image, ImageDraw
-from face_recognition.face_recognition_cli import image_files_in_folder
 import face_recognition
 import cv2
 import pickle
-import numpy as np
+import subprocess
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -76,5 +73,6 @@ if __name__ == "__main__":
         predictions = predict(captured_image_path, model_path="trained_knn_model.clf")
         for name, (top, right, bottom, left) in predictions:
             print(f"- Found {name} at ({left}, {top})")
+            subprocess.run(['python', 'drowsy_detection_cam.py'])
         show_prediction_labels_on_image(captured_image_path, predictions)
 
