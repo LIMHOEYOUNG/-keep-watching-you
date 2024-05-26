@@ -43,20 +43,15 @@ while cap.isOpened():
                 #print("mouthcount4:", mouthcount)
         
         if 40 > eyecount >= 20: #눈을 2초이상 감았을시
-            if not warning_active and current_time - last_warned > 5:  # 5초마다 경고
-                cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
-                playsound("beep-1.wav", block=False)
-                last_warned = current_time
-                warning_active = True 
-        else:
-            warning_active = False 
+            cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
+            #서버 전송
         if eyecount >= 40: #눈을 4초이상 감았을시
             cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
-            playsound("drowsy.wav", block=False)
+            #서버 전송
             eyecount = 0
         if mouthcount >= 25: #입을 5초이상 열고 있을시
             cv2.putText(frame, "drowsy dectection mouthcount", (50,50), font, 1.0, (0, 0, 0), 1)
-            playsound("drowsy.wav", block=False)
+            #서버 전송
             mouthcount = 0
         #annotated_image = results.plot()
         #cv2.imshow('YOLO', annotated_image)
