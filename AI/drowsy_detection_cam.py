@@ -45,9 +45,6 @@ while cap.isOpened():
         if 40 > eyecount >= 20: #눈을 2초이상 감았을시
             cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
             #서버 전송
-        if eyecount >= 40: #눈을 4초이상 감았을시
-            cv2.putText(frame, "drowsy dectection eyecount", (50,50), font, 1.0, (0, 0, 0), 1)
-            #서버 전송
             eyecount = 0
         if mouthcount >= 25: #입을 5초이상 열고 있을시
             cv2.putText(frame, "drowsy dectection mouthcount", (50,50), font, 1.0, (0, 0, 0), 1)
