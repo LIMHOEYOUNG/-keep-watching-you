@@ -27,7 +27,7 @@ def capture_image_on_face_detection(output_path='check/image.jpg'):
     cv2.destroyAllWindows()
     return output_path
 
-def predict(X_img_path, knn_clf=None, model_path=None, distance_threshold=0.4):
+def predict(X_img_path, knn_clf=None, model_path=None, distance_threshold=0.3):
     if not os.path.isfile(X_img_path) or os.path.splitext(X_img_path)[1][1:] not in ALLOWED_EXTENSIONS:
         raise Exception(f"Invalid image path: {X_img_path}")
 
