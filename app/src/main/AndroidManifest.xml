@@ -24,7 +24,7 @@
         android:usesCleartextTraffic="true">
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="w1ktctpg1u" />
+            android:value=""네이버 클라이언트 아이디" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/home_icon" />
