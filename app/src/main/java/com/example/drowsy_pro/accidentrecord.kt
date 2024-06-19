@@ -59,7 +59,7 @@ class accidentrecord : AppCompatActivity() {
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val jsonData = URL("http://api.odcloud.kr/api/15047952/v1/uddi:654ab7ff-40d7-4193-9cfd-b0a65210eb20?page=1&perPage=100&serviceKey=sMQiHxbg2rZaJC2KLyznTUsTdonxSW1kEd%2FlkWSB2jIIIe8h9%2FDziXohC9JNpzjLtrGTPx8F4N0g2P7A2%2FGfGw%3D%3D").readText()
+                val jsonData = URL("사고통계URL").readText()
                 val jsonObject = JSONObject(jsonData)
                 val data = jsonObject.getJSONArray("data")
 
