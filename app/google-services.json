@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "159867825849",
+    "project_id": "drowypro",
+    "storage_bucket": "drowypro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159867825849:android:751a17a4b26c2fe234b568",
+        "android_client_info": {
+          "package_name": "com.example.drowsy_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIAtXMOFgT1C-QeHLthAvprhHjzFU3838"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
