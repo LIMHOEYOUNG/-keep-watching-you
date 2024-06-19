@@ -31,9 +31,8 @@
 
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="124dp"
+        android:layout_width="wrap_content"
         android:layout_height="67dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="운행 기록"
         android:textAlignment="center"
@@ -41,27 +40,33 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/go_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/go_mypage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/driving_map"
         android:name="com.naver.maps.map.MapFragment"
         android:layout_width="350dp"
         android:layout_height="461dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/list_button"
-        android:layout_width="135dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="136dp"
+        android:layout_width="156dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="36dp"
         android:text="목록으로"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/driving_map" />
 </androidx.constraintlayout.widget.ConstraintLayout>

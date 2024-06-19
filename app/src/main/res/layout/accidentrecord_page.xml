@@ -31,9 +31,8 @@
 
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="124dp"
+        android:layout_width="wrap_content"
         android:layout_height="67dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="사고 통계"
         android:textAlignment="center"
@@ -41,27 +40,34 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/go_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/go_mypage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lineChart"
         android:layout_width="358dp"
         android:layout_height="375dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="192dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/ok_button"
-        android:layout_width="112dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="148dp"
+        android:layout_width="142dp"
+        android:layout_height="57dp"
         android:layout_marginTop="36dp"
+        android:onClick="updateGraph"
         android:text="확인"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineChart"
-        android:onClick="updateGraph"/>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/lineChart" />
 
     <Spinner
         android:id="@+id/graph_menu"

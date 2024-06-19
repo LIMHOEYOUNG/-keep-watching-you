@@ -31,9 +31,8 @@
 
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="124dp"
+        android:layout_width="wrap_content"
         android:layout_height="67dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="메인 페이지"
         android:textAlignment="center"
@@ -41,19 +40,19 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/go_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/go_mypage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <Button
         android:id="@+id/go_locationcar"
         android:layout_width="324dp"
         android:layout_height="74dp"
-        android:layout_marginStart="43dp"
         android:layout_marginTop="156dp"
-        android:layout_marginEnd="43dp"
         android:text="차량 위치"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,21 +86,25 @@
         android:id="@+id/go_drivingrecord"
         android:layout_width="140dp"
         android:layout_height="74dp"
-        android:layout_marginStart="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="32dp"
         android:text="운행기록"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/go_accident"
         app:layout_constraintTop_toBottomOf="@+id/go_unperson" />
 
     <Button
         android:id="@+id/go_accident"
         android:layout_width="140dp"
         android:layout_height="74dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="44dp"
         android:text="사고통계"
         android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/go_drivingrecord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/go_unperson" />
 
@@ -109,22 +112,27 @@
         android:id="@+id/go_drowsyrecord"
         android:layout_width="140dp"
         android:layout_height="74dp"
-        android:layout_marginStart="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="28dp"
         android:text="졸음기록"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/go_logout"
         app:layout_constraintTop_toBottomOf="@+id/go_drivingrecord" />
 
     <Button
         android:id="@+id/go_logout"
         android:layout_width="140dp"
         android:layout_height="74dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="44dp"
         android:text="로그아웃"
         android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/go_drowsyrecord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/go_accident" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

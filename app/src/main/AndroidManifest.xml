@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,7 +24,13 @@
         android:usesCleartextTraffic="true">
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="네이버 api" />
+            android:value="w1ktctpg1u" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/home_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/black" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -35,17 +45,48 @@
             android:exported="true"/>
         <activity android:name=".drivingrecord"
             android:exported="true"/>
-        <activity android:name=".drowsynotification"
-            android:exported="true"/>
+        <activity
+            android:name=".drowsynotification"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="com.example.drowsy_pro.drowsynotification" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".drowsyrecord"
             android:exported="true"/>
         <activity android:name=".locationcar"
+            android:exported="true"/>
+        <activity android:name=".loginpage"
             android:exported="true"/>
         <activity android:name=".unperson"
             android:exported="true"/>
         <activity android:name=".drivingmap"
         android:exported="true"/>
-
+        <activity android:name=".test"
+        android:exported="true"/>
+        <activity android:name=".drowsymap"
+            android:exported="true"/>
+        <activity android:name=".unpersonrecord"
+            android:exported="true"/>
+        <service
+            android:name=".FCMservice"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".AlarmService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback">
+        </service>
+        <service
+            android:name=".unpersonService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback">
+        </service>
     </application>
 
 </manifest>

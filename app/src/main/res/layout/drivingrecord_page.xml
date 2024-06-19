@@ -31,17 +31,18 @@
 
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="174dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:layout_marginTop="40dp"
         android:text="운행 기록 목록"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/go_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/go_mypage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ScrollView
         android:layout_width="match_parent"

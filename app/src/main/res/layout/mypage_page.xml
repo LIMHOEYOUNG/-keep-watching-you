@@ -19,9 +19,8 @@
 
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="124dp"
+        android:layout_width="wrap_content"
         android:layout_height="67dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="마이 페이지"
         android:textAlignment="center"
@@ -29,5 +28,29 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/go_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/go_mypage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+    <Button
+        android:id="@+id/go_mypage"
+        android:layout_width="86dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:drawableTop="@drawable/mypage_icon"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/test_token"
+        android:layout_width="255dp"
+        android:layout_height="366dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="84dp"
+        android:text="TextView"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>

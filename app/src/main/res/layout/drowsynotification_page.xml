@@ -31,9 +31,8 @@
 
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="124dp"
+        android:layout_width="wrap_content"
         android:layout_height="67dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="졸음 알림"
         android:textAlignment="center"
@@ -41,5 +40,32 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/go_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/go_mypage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <Button
+        android:id="@+id/stop_alarm"
+        android:layout_width="233dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="76dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="알림 종료"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_name"
+        app:srcCompat="@drawable/drowzy_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
