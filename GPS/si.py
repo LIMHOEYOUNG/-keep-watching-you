@@ -2,7 +2,7 @@ import subprocess
 
 def run():
 
-    password = 'asd6218'  # 실제 비밀번호로 교체해야 합니다
+    password = ''  # 실제 비밀번호로 교체해야 합니다
 
     # su 명령어 실행을 위한 명령어 리스트
     su_command = ['su', '-c', 'chmod 666 /dev/ttyACM0']
